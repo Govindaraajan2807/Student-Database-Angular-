@@ -1,0 +1,149 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <form #addStudent="ngForm">
+                <div class="form-group ">
+                    <label for="firstName"><strong>first name: </strong></label>
+                    <input type="text" ngModel name="firstName" class="form-control" required>
+                </div>
+
+                <div class="form-group ">
+                    <label for="lastName"><strong>last name: </strong></label>
+                    <input type="text" ngModel name="lastName" class="form-control" required>
+                </div>
+
+                <div class="form-group ">
+                    <label for="emailId"><strong>Email ID: </strong></label>
+                    <input type="text" ngModel name="emailId" class="form-control" required>
+                </div>
+
+                <div class="form-group ">
+                    <label for="mobileNumber"><strong>mobile number: </strong></label>
+                    <input type="text" ngModel name="mobileNumber" class="form-control" required>
+                </div>
+
+                <div>
+                    <label for="gender"><strong>Gender: </strong></label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <label class="form-check-label" for="Male">Male </label>
+                    <input class="form-check-input" ngModel="gender" type="radio" name="gender" id="MALE"
+                        value="Male">
+                </div>
+                <div class="form-check form-check-inline">
+                    <label class="form-check-label" for="Female">Female </label>
+                    <input class="form-check-input" ngModel="gender" type="radio" name="gender" id="FEMALE"
+                        value="Female">
+                </div>
+
+                <div class="form-group ">
+                    <label for="details"><strong>Details: </strong></label>
+                    <input type="text" ngModel name="details" class="form-control" required>
+                </div>
+
+                <div class="form-group ">
+                    <label for="city"><strong>City: </strong></label>
+                    <input type="text" ngModel name="city" class="form-control" required>
+                </div>
+
+                <div class="form-group ">
+                    <label for="pinCode"><strong>Pincode: </strong></label>
+                    <input type="text" ngModel name="pinCode" class="form-control" required>
+                </div>
+
+                <div class="form-group ">
+                    <label for="state"><strong>State: </strong></label>
+                    <input type="text" ngModel name="state" class="form-control" required>
+                </div>
+
+                <div class="form-group ">
+                    <label for="country"><strong>Country: </strong></label>
+                    <input type="text" ngModel name="country" class="form-control" required>
+                </div>
+
+
+
+                
+                <div class="form-group hobbieName">
+                    <label for="hobbie"><strong>Hobbies:</strong></label>
+                    <div *ngFor="let e of hobbie | keyvalue" class="form-check">
+                        <label class="form-check-label" for="{{e.value}}">
+                            <input class="form-check-input" ngModel type="checkbox" id="{{e.value}}" ngModel name="hobbie"
+                                value="{{e.value}}">
+                            {{e.key}}
+                        </label>
+                    </div>
+                
+                
+                    <div>
+                        <label for="course"><strong>Course: </strong></label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label" for="BCA">BCA </label>
+                        <input class="form-check-input" ngModel="course" type="radio" name="course" id="BCA"
+                            value="BCA">
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label" for="BCom">BCom </label>
+                        <input class="form-check-input" ngModel="course" type="radio" name="course" id="BCom"
+                            value="BCom">
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label" for="BSc">BSc </label>
+                        <input class="form-check-input" ngModel="course" type="radio" name="course" id="BSc"
+                            value="BSc">
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label" for="BA">BA </label>
+                        <input class="form-check-input" ngModel="course" type="radio" name="course" id="BA"
+                            value="BA">
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label" for="MCom">MCom </label>
+                        <input class="form-check-input" ngModel="course" type="radio" name="course" id="MCom"
+                            value="MCom">
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label" for="MCom">MSc </label>
+                        <input class="form-check-input" ngModel="course" type="radio" name="course" id="MSc"
+                            value="MSc">
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label" for="MCom">MA </label>
+                        <input class="form-check-input" ngModel="course" type="radio" name="course" id="MA"
+                            value="MA">
+                    </div>
+
+
+                   
+
+                    <div class="form-group qualificationClass">
+                        <label for="qualification"><strong>Qualification :</strong></label>
+                        <div *ngFor="let e of qualification | keyvalue" class="form-check">
+                            <label class="form-check-label" for="{{e.value}}">
+                                <input class="form-check-input" ngModel type="checkbox" id="{{e.value}}" ngModel name="qualification"
+                                    value="{{e.value}}">
+                                {{e.key}}
+                            </label>
+                        </div>
+                </div>
+                
+
+                
+
+                <br>
+                <br>
+
+                <button type="reset" class="btn btn-secondary">Reset</button>
+                <br>
+                <br>
+
+                <button class="btn btn-primary" type="button" (click)="createStudent(addStudent)">Submit</button>
+        </div>
+    
+
+
